@@ -1,0 +1,11 @@
+def jsp(nom):
+    alphabets = 0
+
+    for i in range(len(nom)):
+        if(nom[i].isalpha() & nom[i].islower()):
+            alphabets = alphabets + 1
+
+            
+    print("\nrésultat :  ", alphabets)
+
+jsp("Semi-annuel")

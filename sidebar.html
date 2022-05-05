@@ -1,0 +1,140 @@
+<htm>
+
+  <head>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+    .navbar {
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #d7d7d7;
+    height: 50px;
+    padding: 0 15px;
+    font-family: Ubuntu; 
+    }
+      #sidebar {
+        position: absolute;
+        width: 40%;
+        height: 100%;
+        background: #000;
+        left: -40%;
+        transition: .4s;
+      }
+
+      #sidebar ul li {
+        list-style: none;
+        color: #fff;
+        font-size: 20px;
+        padding: 26px 24px;
+      }
+
+      #sidebar .toggle-btn {
+        position: absolute;
+        top: 30px;
+        left: 330px;
+      }
+
+      .toggle-btn span {
+        width: 30px;
+        height: 4px;
+        background: #000;
+        display: block;
+        margin-top: 4px;
+        margin-left: 300px;
+      }
+
+      #sidebar.active {
+        left: 0;
+      }
+
+      
+      
+.liste,table{
+  position: relative;
+  /*vertical-align: top;*/
+  word-break: break-all;
+  background-color: rgb(255, 255, 255);
+  font-family: Ubuntu; 
+}
+
+#commentaire,#myTable{
+    width: 100%;
+}
+.carte{
+  position: absolute;
+  width: 100%;
+}
+
+.table, td, th {
+  border: 1px solid black;
+}
+
+#map {
+  height: calc(100vh - 52px); /* 100% of the viewport height - navbar height */
+}
+
+
+
+    </style>
+  </head>
+
+  <body>
+    <div class="navbar">
+        <p>CARTOGRAPHIE</p>
+    </div>
+    <div class="carte" id="map">sqsq</div>
+
+    <div id="sidebar">
+      <div class="toggle-btn" onclick ="show()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+        <div class="liste" id="liste">
+            <button id="zoom-out">-</button>
+            <button id="zoom-in">+</button>
+            <div id="popup" class="ol-popup">
+              <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+              <div id="popup-content"></div>
+            </div>
+            <form>
+              <input type="text" id="nom" placeholder="Nom" size="1">
+              <input type="number" id="x" placeholder="x" style="width: 5em;">
+              <input type="number" id="y" placeholder="y" style="width: 5em;"><br/>
+              <textarea id="commentaire" name="commentaire" rows="5" cols="50"></textarea>
+<!--
+              <input type="text" id="commentaire" placeholder="Commentaire"/><br/>
+              -->
+              <button id="boot" value="enregister" >Enregistrer</button>
+            </form>
+      
+            <button class="icon">kik</button>
+      
+          </div>
+          
+          <tr>
+            <td>
+                <div>
+                  <table id="myTable">
+                    <tr>
+                      <th>Nom</th>
+                      <th>coordonnée</th>
+                      <th>commentaire</th>
+                    </tr>
+                  </table>
+                </div>
+            </td>
+          </tr>
+
+
+
+    </div>
+
+    <script>
+      function show() {
+        document.getElementById('sidebar').classList.toggle('active');
+      }
+    </script>
+  </body>
+</htm>

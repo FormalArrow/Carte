@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/x-icon" href="https://openlayers.org/favicon.ico" />
+  <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.14.1/build/ol.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.14.1/css/ol.css"
+    type="text/css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carte</title>
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu" />
+</head>
+
+<body>
+  <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
+  <div class="navbar">
+    <p>CARTOGRAPHIE</p>
+  </div>
+  <div class="carte" id="map"></div>
+  <div id="sidebar">
+    <div class="toggle-btn" onclick="show()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="liste" id="liste">
+      <button id="zoom-out" style="width: 5em">-</button>
+      <button id="zoom-in" style="width: 5em">+</button>
+      <div id="popup" class="ol-popup">
+        <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+        <div id="popup-content"></div>
+      </div>
+      <form action="#">
+        <label>ID : </label>
+        <input type="text" id="nom" placeholder="Nom" style="width: 5em" />
+        <label>LATITUDE : </label>
+        <input type="number" id="x" placeholder="x" style="width: 5em" />
+        <label>LONGITUDE : </label>
+        <input type="number" id="y" placeholder="y" style="width: 5em" /><br />
+        <textarea id="commentaire" name="commentaire" rows="5" cols="50"></textarea>
+        <button id="boot" value="enregister">Enregistrer</button>
+      </form>
+    </div>
+    <tr>
+      <td>
+        <div>
+          <table id="myTable">
+            <tr>
+              <th>Nom</th>
+              <th>coordonnée</th>
+              <th>commentaire</th>
+            </tr>
+          </table>
+        </div>
+      </td>
+    </tr>
+  </div>
+  <script>
+    function show() {
+      document.getElementById('sidebar').classList.toggle('active');
+    }
+  </script>
+  <script type="module" src="./main.js"></script>
+</body>
+
+</html>

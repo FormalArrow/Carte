@@ -1,0 +1,75 @@
+@import 'node_modules/ol/ol.css';
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+.navbar {
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #d7d7d7;
+  height: 50px;
+  padding: 0 15px;
+  font-family: Ubuntu;
+}
+#sidebar {
+  position: absolute;
+  width: 40%;
+  /*height: 100%;*/
+  background: #000;
+  left: -40%;
+  transition: 0.4s;
+}
+
+#sidebar ul li {
+  list-style: none;
+  color: #fff;
+  font-size: 20px;
+  padding: 26px 24px;
+}
+
+#sidebar .toggle-btn {
+  position: absolute;
+  top: 30px;
+  left: 430px;
+}
+
+.toggle-btn span {
+  width: 30px;
+  height: 4px;
+  background: #000;
+  display: block;
+  margin-top: 4px;
+  margin-left: 300px;
+}
+
+#sidebar.active {
+  left: 0;
+}
+
+.liste,
+table {
+  position: relative;
+  /*vertical-align: top;*/
+  word-break: break-all;
+  background-color: rgb(255, 255, 255);
+  font-family: Ubuntu;
+}
+
+#commentaire,
+#myTable {
+  width: 100%;
+}
+.carte {
+  position: absolute;
+  width: 100%;
+}
+
+.table,
+td,
+th {
+  border: 1px solid black;
+}
+
+#map {
+  height: calc(100vh - 52px); /* 100% of the viewport height - navbar height */
+}
